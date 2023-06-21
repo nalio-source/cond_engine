@@ -8,7 +8,7 @@ For example I used it for [Egg Condition 3](https://nalio.itch.io/) 🥚🥚🥚
 
 ![Screenshot](screen_github.png)
 
-This code is open source only because I would like to give the possibility to use a graphical interface without having to install external libraries, 
-please don't modify the engine code.
+This code is open source and provides a graphical interface without the need to install external libraries.
+Please do not modify the engine code.
 
 *NALIo*
