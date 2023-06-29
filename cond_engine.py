@@ -1,10 +1,10 @@
 NOME_PROGRAMMA      = "COND ENGINE"
 CREATORE_PROGRAMMA  = "NALIo"
 DATA_CREAZIONE      = "26/05/2023"
-VERSIONE_ATTUALE    = "0.0.0.8"
-ULTIMO_UPDATE       = "11/06/2023"
+VERSIONE_ATTUALE    = "0.0.0.9"
+ULTIMO_UPDATE       = "29/06/2023"
 
-MODIFICHE           = "Aggiunta funzione controllo_pixel; diminuito sleep iniziale; aggiunto metodo aggiungi_scritta"
+MODIFICHE           = "Risolto bug riempi; aggiunto +1 nel ridimensiona della visuale"
 COSE_DA_FARE        = "Metti che puoi essere anche in una mappa più piccola della visuale"
 
 
@@ -95,7 +95,7 @@ class Grafica():
 
     def riempi(self, texture):
         self.sfondo = texture
-        self.genera(texture)
+        self.genera()
     
     def controllo_pixel(self, coordinate):
         if coordinate[0] < self.dimensione[0] and coordinate[1] < self.dimensione[1] and coordinate[0] >= 0 and coordinate[1] >= 0:
@@ -137,7 +137,7 @@ class Visuale():
         self.dimensione = dimensione
         self.distanza = distanza
         self.grafica = grafica
-        ridimensiona_finestra((self.dimensione[0]+self.distanza[0])*(self.grafica.len_pixel_no_colore)*2+MARGINE_BORDO[0], (self.dimensione[1]+self.distanza[1])*2+MARGINE_BORDO[1])
+        ridimensiona_finestra((self.dimensione[0]+self.distanza[0])*(self.grafica.len_pixel_no_colore)*2+MARGINE_BORDO[0]+1, (self.dimensione[1]+self.distanza[1])*2+MARGINE_BORDO[1])
 
     def mostra(self, coordinata, colore_esterno=BIANCO):
         if not self.grafica.colorata: colore = "" # se la grafica è in bianco e nero, non vengono aggiunti colori
